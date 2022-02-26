@@ -1,0 +1,55 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/publicar_arte.css' %}" />
+    <title>Publicar Arte</title>
+    {% include 'parciais/_head.html '%}
+</head>
+
+{% block conteudo %}
+
+<body>
+    {% include 'parciais/_header.html '%}
+    {% include 'parciais/_nav.html '%}
+
+    <main class="main-pub">
+        <div class="bottom-div">
+            <h1 class="h-form">Adicionar Imagem</h1>
+            <form action="." enctype="multipart/form-data" title="Publicar" method="post">
+                {%csrf_token%}
+                <!-- Area onde o usuario faz o upload da arte / O nome da arte deve ficar encima da imagem quando o artista selecionar a imagem para upload-->
+                <div class="file-div">
+                    {{form.foto}}
+                </div>
+
+                <div class="inputs-div">
+                    <ol class="lista-inserir">
+                        <li>
+                            <h2> Inserir Dados da Arte</h2>
+                        </li>
+                        <li>{{form.nome}}</li>
+                        <li>{{form.descricao}}</li>
+                        <label>Formato:</label>
+                        <li>{{form.formato}}</li>
+                        <label>Temática:</label>
+                        <li>{{form.tematica}}</li>
+                        <label>Categoria:</label>
+                        <li>{{form.categoria}}</li>
+                        <li><input type="text" maxlength="75" id="tag_hl" name="tag_hl" placeholder="Crie suas tags">
+                        </li>
+                        <li>{{form.preco}}</li>
+                        <li><button class="button-form" type="submit">Publicar</button></li>
+                    </ol>
+                </div>
+            </form>
+        </div>
+
+    </main>
+</body>
+{% endblock %}
+
+{% include 'parciais/_footer.html '%}
+
+</html>

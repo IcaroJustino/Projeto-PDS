@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    {%include 'parciais/_head.html'%}
+    <link rel="stylesheet" href="{% static 'css/buscar_arte.css' %}" />
+</head>
+
+<body>
+    {%include 'parciais/_header.html'%}
+
+    {%include 'parciais/_nav.html'%}
+
+    <main class="main-busca">
+        <p class="p-tooltip">Tente filtrar o valor mínimo e máximo que pretende pagar! </p>
+        <section>
+            <form class="filtros" method="get" action="{% url 'busca' %}">
+                <input class="form-control busca-form" type="search" value="{{request.GET.termonome}}"
+                    placeholder="nome" name="termonome">
+
+                <input class="form-control busca-form" type="number" value="{{request.GET.termoprecomin}}"
+                    placeholder="Valor Mínimo" name="termoprecomin">
+
+                <input class="form-control busca-form" type="number" value="{{request.GET.termoprecomax}}"
+                    placeholder="Valor Máximo" name="termoprecomax">
+
+                <input class="button-form-filtros" type="submit" value="Buscar">
+            </form>
+        </section>
+        <div class="section-lista">
+            <h2>Resultado da Pesquisa</h2>
+            {% for arte in TodasArtes %}
+            <ul>
+                <li>
+                    <picture>
+                        <a href="detalhar/{{arte.slug}}">
+                            <img src="{{ arte.foto.url }}" style="max-width: 250px; height: 250px;">
+                    </picture>
+                </li>
+                <li><strong>Nome:</strong> {{arte.nome}}</li>
+                <li><strong>Preço:</strong> R${{arte.preco}}</li>
+            </ul>
+            {%endfor%}
+        </div>
+
+    </main>
+</body>
+
+{%include 'parciais/_footer.html'%}
+
+</html>

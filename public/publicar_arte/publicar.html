@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- comentarios sobre o meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Arte</title>
+    <link rel="stylesheet" href="../CSS/index.css"/>
+    <link rel="stylesheet" href="CSS/publicar.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-site">
+        <div class="header-container">
+            <ol class="header-buttons">
+                <li><textarea placeholder="Pesquise..."></textarea></li>
+                <!--<li><a href="index.html">Cadastrar</a></li>
+                <li><a href="index.html">Entrar</a></li>-->
+                <li>
+                    <a href="index.html"><img src="../img/user.png" alt="Ícone de Usuário"></a>
+                </li>
+                <li>
+                    <a href="index.html"><img src="../img/shopping-cart.png" alt="Ícone de Carrinho"></a>
+                </li>               
+            </ol>
+        </div>
+    </header>
+    <hr class="header-hr">
+    <nav>
+        <div class="flex-container">
+            <ol>
+                <li><a href="index.html">Categorias</a></li>
+                <li><a href="index.html">Temáticas</a></li>
+                <li><a href="index.html">Artistas</a></li>
+                <li><a href="index.html">Artes</a></li>
+                <li><a href="index.html">Favoritos</a></li>
+                <li><a href="index.html">Histórico</a></li>
+                <li><a href="index.html">Ajuda</a></li>
+                <li><a href="index.html">Contato</a></li>
+                <li><a href="index.html">Sobre</a></li>
+            </ol>
+        </div>
+    </nav>
+    <hr class="product-hr">
+
+    <main class="main-index main-pub">
+        <div class="bottom-div">
+            <h1 class="h-form">Adicionar Imagem</h1>
+            <form enctype="multipart/form-data" title="Publicar">
+                <!-- Area onde o usuario faz o upload da arte / O nome da arte deve ficar encima da imagem quando o artista selecionar a imagem para upload-->
+                <div class="file-div">
+                    <input class="imagem-file" type="file" name="Adicionar Arte" placeholder="Selecionar Imagem"> 
+                </div>          
+                     
+                <div class="inputs-div">
+                    <ol class="lista-inserir">
+                        <li><h2> Inserir Dados da Arte</h2></li>
+                        <li><input type="text" name="Nome" placeholder="Título"></li>
+                        <li><input type="text" name="Tamanho" placeholder="Resolução"></li>
+                        <li><input type="text" name="Formato" placeholder="Formato do arquivo"> </li>
+                        <li><input type="text" name="Temática" placeholder="Temática"></li>
+                        <li><input type="text" name="Categoria" placeholder="Categoria"></li>
+                        <li><input type="text" name="Tags" placeholder="Tags"></li>
+                        <li><input type="text" name="Valor" placeholder="Valor"></li>
+                        <li><button class="button-form" type="submit">Publicar</button></li>
+                    </ol>
+                </div>           
+            </form>
+        </div>
+        
+    </main>
+    
+</body>
+<footer>
+    <h1>Arte Mart</h1>
+</footer>
+
+</html>

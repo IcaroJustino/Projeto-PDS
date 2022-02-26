@@ -1,0 +1,18 @@
+{%load static%}
+
+<nav>
+    <div class="flex-container">
+        <ol>
+            <li><a href="#">Artistas</a></li>
+            {% if request.user.groups.all.0.name == 'Artista' %}
+            <li><a href="{% url 'minhasartes' %}">Minhas Artes</a></li>
+            {% endif%}
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Histórico</a></li>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#l">Sobre</a></li>
+        </ol>
+    </div>
+    <hr class="product-hr">
+</nav>

@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}" />
+    <title>Página Inicial</title>
+    {%include 'parciais/_head.html'%}
+</head>
+
+<body>
+    {%include 'parciais/_header.html'%}
+    {%include 'parciais/_nav.html'%}
+
+
+    <main class="main-index">
+        <section>
+            <h2>Minhas Artes</h2>
+            <hr class="destaques-hr">
+            <div class="padding-div">
+                <ol>
+                    {% for arte in myartes %}
+                    <a href="detalhar/{{arte.slug}}">
+                        <li><img src="{{ arte.foto.url }}" width="130" height="130" alt="Ícone placeholder"></li>
+                    </a>
+                    {% endfor %}
+                </ol>
+            </div>
+        </section>
+    </main>
+</body>
+
+{%include 'parciais/_footer.html'%}
+
+</html>

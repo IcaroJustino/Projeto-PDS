@@ -1,0 +1,84 @@
+.header-artista {
+    position: absolute;
+    right: 0;
+}
+
+.header-artista h2 {
+    font-family: 'Teko', sans-serif;
+    color: white;
+    font-size: 4em;
+    width: 500px;
+    text-align: right;
+    margin-top: 80px;
+}
+.header-artista-h2 {
+    background: #f5a733;
+    padding-left: 16px;
+}
+
+.header-pic {
+    position: absolute;
+    z-index: -1;
+}
+
+.header-pic img {
+    width: 100%;
+}
+
+.main-index {
+    margin: auto;
+    margin-top: 30%;
+    z-index: 1;
+}
+
+.main-product {
+    width: 65%;
+    margin: auto;
+}
+
+main {
+    background-color: white;
+    width: 80%;    
+}
+.destaques-hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, #c578e9, #f5a733);
+    margin: auto;
+    margin-bottom: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.padding-div {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 128px;
+    padding-bottom: 200px;
+}
+
+section ol {
+    list-style-type: none;
+    margin: auto;
+}
+
+section li {
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+section h2 {
+    text-align: center;
+    padding-top: 64px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+a:hover {
+    text-decoration: underline;
+    transition: 0.25s;
+}
+body {
+    background: #cccccc;
+}

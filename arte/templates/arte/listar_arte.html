@@ -1,0 +1,50 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/listar_arte.css' %}" />
+    <title>Página Inicial</title>
+    {%include 'parciais/_head.html'%}
+</head>
+
+<body>
+    {%include 'parciais/_header.html'%}
+    {%include 'parciais/_nav.html'%}
+
+    <header class="header-artista">
+        <h2>
+            {% if request.user.groups.all.0.name == 'Artista' %}
+            <a href="{% url 'publicar_arte'%}"> <span class="header-artista-h2">É UM ARTISTA? QUE TAL PUBLICAR SUA
+                    ARTE?</span></a>
+            {%else%}
+            <a href="{% url 'listar_arte'%}"> <span class="header-artista-h2">É UM ARTISTA? QUE TAL PUBLICAR SUA
+                    ARTE?</span></a>
+            {% endif %}
+        </h2>
+    </header>
+
+    <picture class="header-pic">
+        <img src="{% static 'img/kelly-sikkema-Dx1b5ucschA-unsplash.jpg' %}">
+    </picture>
+
+    <main class="main-index">
+        <section>
+            <h2>Destaques</h2>
+            <hr class="destaques-hr">
+            <div class="padding-div">
+                <ol>
+                    {% for arte in TodasArtes %}
+                    <a href="detalhar/{{arte.slug}}">
+                        <li><img src="{{ arte.foto.url }}" width="130" height="130" alt="Ícone placeholder"></li>
+                    </a>
+                    {% endfor %}
+                </ol>
+            </div>
+        </section>
+    </main>
+</body>
+
+{%include 'parciais/_footer.html'%}
+
+</html>

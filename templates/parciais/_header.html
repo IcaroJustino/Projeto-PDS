@@ -1,0 +1,66 @@
+{%load static%}
+
+<header class="header-site">
+    <div class="header-container">
+        <div class="logo-img">
+            <a href="{% url 'listar_arte'%}"><img src="{% static 'img/Logo.png' %}" alt="Logo"></a>
+        </div>
+
+        <ol class="header-buttons">
+
+            {% if request.user.is_authenticated %}
+            <li>
+                <h4>Bem - Vindo {{user.first_name}}</h4>
+            </li>
+            {% endif%}
+
+
+            {% if request.user.groups.all.0.name == 'Artista' %}
+            <li>
+                <a href="{% url 'publicar_arte'%}"><img src="{% static 'img/add.png'%}"
+                        alt="Ícone de Adicionar arte"></a>
+            </li>
+            {% endif%}
+
+
+
+
+            <li>
+                <form method="get" action="{% url 'busca' %}">
+                    <input class="form-control" type="search" value="{{request.GET.termonome}}"
+                        placeholder="Encontre sua arte" name="termonome">
+                </form>
+            </li>
+
+            <li>
+
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'minhasartes'%}"><img src="{% static 'img/user.png'%}" alt="Ícone de Usuário"></a>
+                {%else%}
+                <a href="{% url 'login'%}"><img src="{% static 'img/user.png'%}" alt="Ícone de Usuário"></a>
+                {% endif%}
+
+
+            </li>
+            {% if request.user.groups.all.0.name == 'Comprador' %}
+            <li>
+
+                <a href="{% url 'adicionar_carrinho'%}"><img src="{% static 'img/shopping-cart.png'%}"
+                        alt="Ícone de Carrinho"></a>
+
+            </li>
+            {% endif%}
+
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'logoff' %}"> <img src="{% static 'img/logout.png'%}" alt="Ícone de logout"></a>
+            </li>
+            {% endif%}
+
+
+
+        </ol>
+    </div>
+</header>
+
+<hr class="header-hr">

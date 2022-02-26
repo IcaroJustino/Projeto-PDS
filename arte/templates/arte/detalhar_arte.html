@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/detalhar_arte.css' %}" />
+    <title>Detalhes de {{artedetalhe.nome}}</title>
+    {%include 'parciais/_head.html'%}
+</head>
+
+<body>
+    {%include 'parciais/_header.html'%}
+    {%include 'parciais/_nav.html'%}
+    <hr class="product-hr">
+    <main class="main-product">
+        <div class="flex-container">
+            <section class="left-section-product">
+                <picture>
+                    <img src="{{ artedetalhe.foto.url }}" width="512" height="512" alt="Ícone placeholder">
+                </picture>
+                <ol class="list-product">
+                    <li>
+                        <h2>Descrição:</h2>
+                    </li>
+                    <li>
+                        <p>{{artedetalhe.descricao}}</p>
+                    </li>
+                    <li>
+                        <h2>Dimensões:</h2>
+                    </li>
+                    <li>
+                        <p>{{artedetalhe.image_width}}x{{artedetalhe.image_height}}</p>
+                    </li>
+                </ol>
+                <ol class="list-product">
+                    <li>
+                        <h2>Criada por: {{artedetalhe.user}}</h2>
+                    </li>
+                    <li>
+                        <h2>Título: {{artedetalhe.nome}}</h2>
+                    </li>
+                    <li>
+                        <h2>Formato: {{artedetalhe.formato}}</h2>
+                    </li>
+                    <li>
+                        <h2>Preço: R${{artedetalhe.preco}}</h2>
+                    </li>
+                    <li>
+                        <form form class="filtros" method="POST" action="{% url 'adicionar_carrinho' %}">
+                            {%csrf_token%}
+                            <input class="button-form-filtros" type="submit" value="Adicionar ao carrinho">
+                        </form>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </main>
+</body>
+{%include 'parciais/_footer.html'%}
+
+</html>

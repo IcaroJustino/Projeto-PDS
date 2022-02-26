@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/registrar.css' %}" />
+    <title>Registre-se</title>
+    {%include 'parciais/_head.html'%}
+</head>
+
+<body>
+
+    <main>
+        <div class="logo-login">
+            <a href="{% url 'listar_arte'%}"><img src="{% static 'img/Logo.png' %}" alt="Logo"></a>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <label>Cadastrar como:</label>
+            <select name="tipoconta" type="select" id="tipoconta" placeholder="Tipo da conta">
+                <option value="Artista">Artista</option>
+                <option value="Comprador">Comprador</option>
+            </select>
+            <br>
+            <button class="button-form" type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+
+</html>

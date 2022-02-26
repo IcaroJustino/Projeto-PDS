@@ -1,0 +1,97 @@
+body {
+    background: #cccccc;
+    
+}
+
+main {
+    background-color: white;
+    width: 80%;    
+}
+input[type=text], .lista-inserir textarea, select {
+    margin: 4px;
+    padding: 4px 8px 4px 8px;
+    height: 40px;
+    font-size: 12px;
+    transition: 0.1s;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #757575;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+
+
+select:hover {
+    cursor: pointer;
+}
+
+input[type=text]:focus, .lista-inserir textarea:focus {
+	box-shadow: 1px 0px 12px #c578e9;
+    border: 1px solid #c578e9;
+    transition: 0.1s;
+}
+
+.main-pub {
+    margin-top: 0px;
+    height: 868px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 128px;
+}
+
+.file-div {
+    background-color: #c578e9;
+    border-radius: 5px;
+    float: left;
+    margin-left: 150px;
+}
+
+.h-form {
+    margin-left: 150px;
+    padding: 128px 0px 32px 0px;
+}
+
+input[type=file] {
+    color: white;
+    margin: auto;
+    padding: 200px 64px 200px 64px;   
+}
+
+.inputs-div {
+    float: right;
+    width: 42%;
+}
+
+.button-form {
+    width: 200px;
+    border: 1px solid #f5a733;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    background-color: #f5a733;
+    font-weight: 700;
+    transition: 0.1s;
+    color: black;
+}
+
+.button-form:hover {
+	box-shadow: 1px 0px 8px #c578e9;
+    border: 1px solid #c578e9;
+    transition: 0.1s;
+    background-color: #c578e9;
+    color: white;
+    cursor: pointer;
+}
+
+.button-form:active {
+    outline: 0;
+}
+
+.lista-inserir {
+    list-style-type: none;
+}
